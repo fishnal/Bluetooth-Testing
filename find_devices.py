@@ -2,13 +2,13 @@
 
 import bluetooth as bt
 
-print("Searching for nearby devices")
+print "Searching for nearby devices"
 
 nearby_devices = bt.discover_devices()
 
 for address in nearby_devices:
     name = bt.lookup_name(address)
     if name is None:
-        print("%s found" % address)
+        print "{} found".format(address)
     else:
-        print("%s found: %s" % (address, name))
+        print "{} found: {}".format(address, name)

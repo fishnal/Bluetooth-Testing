@@ -1,6 +1,6 @@
 import bluetooth as bt
 
-print("Starting server. Waiting for a client socket to accept")
+print "Starting server. Waiting for a client socket to accept"
 
 # create server socket, bind to some host and port, let server socket listen
 server_socket = bt.BluetoothSocket(bt.RFCOMM)
@@ -17,12 +17,14 @@ bt.advertise_service(server_socket,
 
 # let server socket accept client connectioon
 client_socket, client_info = server_socket.accept()
-print("Accepted connection from %s" % client_info)
+print "Accepted connection from {}".format(client_info)
 
 # receive data from client and print it
 data = client_socket.recv(1024)
-print("Received %s" % data)
+print "Received {}".format(data)
 
-print("Closing connection")
+print "Closing connection..."
 
 client_socket.close()
+
+print "Done"
